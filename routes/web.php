@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\BooksController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SiteController;
 use Illuminate\Http\Request;
+use App\Http\Controllers\BooksController;
+use App\Http\Controllers\SiteController;
 use Illuminate\Http\JsonResponse;
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +17,10 @@ use Illuminate\Http\JsonResponse;
 */
 
 Route::get('/hello', [SiteController::class, "DemoAction"]);
+
+Route::post('/form', [SiteController::class, "FormData"]);
+Route::post('/file', [SiteController::class, "FileData"]);
+
 Route::post('/hi/{name}/{age}', [SiteController::class, "jsonAction"]);
 
 
@@ -32,6 +36,9 @@ Route::controller(SiteController::class)->group(function () {
     Route::get('/contact', 'contact');
     Route::get('/portfolio', 'Portfolio');
 });
+
+
+
 
 
 Route::post('/submit', function (Request $request) {
