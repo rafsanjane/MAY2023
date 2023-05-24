@@ -26,6 +26,8 @@ Route::post('/form', [SiteController::class, "FormData"]);
 
 Route::post('/file', [SiteController::class, "FileData"]);
 
+Route::post('/ip', [SiteController::class, "UserIp"]);
+
 Route::post('/hi/{name}/{age}', [SiteController::class, "jsonAction"]);
 
 Route::post('/submit', function (Request $request) {

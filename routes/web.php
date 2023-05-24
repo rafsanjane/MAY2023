@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
-use App\Http\Controllers\BooksController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SiteController;
 use Illuminate\Http\JsonResponse;
 /*
@@ -16,10 +16,11 @@ use Illuminate\Http\JsonResponse;
 |
 */
 
-Route::get('/hello', [SiteController::class, "DemoAction"]);
+Route::get('/home', [HomeController::class, "Page"]);
 
 Route::post('/form', [SiteController::class, "FormData"]);
 Route::post('/file', [SiteController::class, "FileData"]);
+Route::post('/ip', [SiteController::class, "UserIp"]);
 
 Route::post('/hi/{name}/{age}', [SiteController::class, "jsonAction"]);
 

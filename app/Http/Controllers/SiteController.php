@@ -7,6 +7,21 @@ use Illuminate\Http\Request;
 class SiteController extends Controller
 {
 
+    function UserIp(Request $request): bool
+    {
+
+        //$ip = $request->ip();
+
+        if ($request->accepts("application/json")) {
+
+            return true;
+        } else {
+            return false;
+        }
+
+        //return $request->getAcceptableContentTypes();
+    }
+
     function FileData(Request $request): bool
     {
 
