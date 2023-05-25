@@ -14,6 +14,8 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         "form",
         "file",
-        "ip"
+        "ip",
+        "Json",
+        "redirect"
     ];
 }

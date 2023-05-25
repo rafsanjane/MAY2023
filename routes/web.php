@@ -16,11 +16,25 @@ use Illuminate\Http\JsonResponse;
 |
 */
 
-Route::get('/home', [HomeController::class, "Page"]);
+Route::controller(HomeController::class)->group(function () {
+
+    Route::get('/', "Page");
+    Route::get('/home', "Page");
+});
+
+
+
+
+
+
+
+
 
 Route::post('/form', [SiteController::class, "FormData"]);
 Route::post('/file', [SiteController::class, "FileData"]);
 Route::post('/ip', [SiteController::class, "UserIp"]);
+Route::post('/json', [SiteController::class, "Json"]);
+Route::get('/redirect', [SiteController::class, "Redirect"]);
 
 Route::post('/hi/{name}/{age}', [SiteController::class, "jsonAction"]);
 

@@ -20,6 +20,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
+Route::controller(HomeController::class)->group(function () {
+
+    Route::get('/', "Page");
+    Route::get('/home', "Page");
+});
+
 Route::get('/hello', [SiteController::class, "DemoAction"]);
 
 Route::post('/form', [SiteController::class, "FormData"]);
@@ -27,6 +33,9 @@ Route::post('/form', [SiteController::class, "FormData"]);
 Route::post('/file', [SiteController::class, "FileData"]);
 
 Route::post('/ip', [SiteController::class, "UserIp"]);
+
+Route::post('/json', [SiteController::class, "Json"]);
+Route::post('/redirect', [SiteController::class, "Redirect"]);
 
 Route::post('/hi/{name}/{age}', [SiteController::class, "jsonAction"]);
 

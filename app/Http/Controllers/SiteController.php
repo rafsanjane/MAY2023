@@ -2,10 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
+use PhpParser\Node\Expr\Cast\Array_;
 
 class SiteController extends Controller
 {
+
+    function Redirect(Request $request): string
+    {
+
+        return redirect("/home");
+    }
+
+    function Json(Request $request): JsonResponse
+    {
+        $code = 201;
+        $content = array('name' => 'Rafsan', 'city' => "Dhaka");
+        return response()->json($content, $code);
+    }
 
     function UserIp(Request $request): bool
     {
@@ -99,43 +115,5 @@ class SiteController extends Controller
             "city" => $city,
             "postcode" => $postcode
         );
-    }
-
-
-
-
-    function Home()
-    {
-        return view('index');
-    }
-
-
-    function resume()
-    {
-        return view('resume');
-    }
-
-
-    function services()
-    {
-        return view('services');
-    }
-
-
-    function contact()
-    {
-        return view('contact');
-    }
-
-
-    function Portfolio()
-    {
-        return view('portfolio');
-    }
-
-
-    function controler_practice()
-    {
-        return 'hello controler';
     }
 }
