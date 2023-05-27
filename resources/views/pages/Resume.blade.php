@@ -2,10 +2,6 @@
 
 @section('content')
 
-@include('components/Hero')
-@include('components/WhatIdo')
-@include('components/Testimonials')
-@include('components/FeaturedProjects')
-@include('components/LatestBlogPosts')
+@include('components/Cv')
 
 @endsection('content')

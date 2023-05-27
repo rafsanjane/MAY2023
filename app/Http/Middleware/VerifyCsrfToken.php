@@ -16,6 +16,10 @@ class VerifyCsrfToken extends Middleware
         "file",
         "ip",
         "Json",
-        "redirect"
+        "redirect",
+        "SessionPut",
+        "SessionPull",
+        "SessionForget",
+        "SessionFlush",
     ];
 }

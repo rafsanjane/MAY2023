@@ -139,7 +139,8 @@ svg:not(:root).svg-inline--fa {
     transform-origin: center center
 }
 
-.fa-layers-counter, .fa-layers-text {
+.fa-layers-counter,
+.fa-layers-text {
     display: inline-block;
     position: absolute;
     text-align: center
@@ -306,11 +307,19 @@ svg:not(:root).svg-inline--fa {
     float: right
 }
 
-.fa.fa-pull-left, .fab.fa-pull-left, .fal.fa-pull-left, .far.fa-pull-left, .fas.fa-pull-left {
+.fa.fa-pull-left,
+.fab.fa-pull-left,
+.fal.fa-pull-left,
+.far.fa-pull-left,
+.fas.fa-pull-left {
     margin-right: .3em
 }
 
-.fa.fa-pull-right, .fab.fa-pull-right, .fal.fa-pull-right, .far.fa-pull-right, .fas.fa-pull-right {
+.fa.fa-pull-right,
+.fab.fa-pull-right,
+.fal.fa-pull-right,
+.far.fa-pull-right,
+.fas.fa-pull-right {
     margin-left: .3em
 }
 
@@ -373,12 +382,18 @@ svg:not(:root).svg-inline--fa {
     transform: scale(1, -1)
 }
 
-.fa-flip-both, .fa-flip-horizontal.fa-flip-vertical {
+.fa-flip-both,
+.fa-flip-horizontal.fa-flip-vertical {
     -webkit-transform: scale(-1, -1);
     transform: scale(-1, -1)
 }
 
-:root .fa-flip-both, :root .fa-flip-horizontal, :root .fa-flip-vertical, :root .fa-rotate-180, :root .fa-rotate-270, :root .fa-rotate-90 {
+:root .fa-flip-both,
+:root .fa-flip-horizontal,
+:root .fa-flip-vertical,
+:root .fa-rotate-180,
+:root .fa-rotate-270,
+:root .fa-rotate-90 {
     -webkit-filter: none;
     filter: none
 }
@@ -390,7 +405,8 @@ svg:not(:root).svg-inline--fa {
     width: 2.5em
 }
 
-.fa-stack-1x, .fa-stack-2x {
+.fa-stack-1x,
+.fa-stack-2x {
     bottom: 0;
     left: 0;
     margin: auto;
@@ -424,7 +440,8 @@ svg:not(:root).svg-inline--fa {
     width: 1px
 }
 
-.sr-only-focusable:active, .sr-only-focusable:focus {
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
     clip: auto;
     height: auto;
     margin: 0;
@@ -455,10 +472,152 @@ svg:not(:root).svg-inline--fa {
     opacity: var(--fa-primary-opacity, 1)
 }
 
-.svg-inline--fa mask .fa-primary, .svg-inline--fa mask .fa-secondary {
+.svg-inline--fa mask .fa-primary,
+.svg-inline--fa mask .fa-secondary {
     fill: #000
 }
 
 .fad.fa-inverse {
     color: #fff
 }
+
+
+/* --------------------My Custom CSS Codes --------------------------- */
+
+
+/**
+
+Custom css
+
+*/
+
+.skill-img {
+    width: 1.5rem;
+}
+
+
+div#resume_container {
+    position: relative;
+    z-index: 1;
+}
+
+
+article.resume-wrapper.mx-auto.theme-bg-light.p-5.mb-5.my-5.shadow-lg:after {
+    content: 'Upwork';
+    background: #6fda44;
+    color: #ffffff;
+    position: absolute;
+    top: 62px;
+    left: -32px;
+    padding: 3px 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 16px 0px 0px 16px;
+    z-index: -1;
+}
+
+article.resume-wrapper.mx-auto.theme-bg-light.p-5.mb-5.my-5.shadow-lg:before {
+    content: 'Fiverr';
+    background: #00b22d;
+    color: #ffffff;
+    position: absolute;
+    top: 100px;
+    left: -32px;
+    padding: 3px 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 16px 0px 0px 16px;
+    z-index: -1;
+}
+
+
+
+.row.align-items-center:after {
+    content: 'PeoplePerHour';
+    background: #ee7200;
+    color: #fff;
+    position: absolute;
+    top: 77px;
+    left: 1078px;
+    padding: 3px 20px;
+    font-family: roboto, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 0px 16px 16px 0px;
+    z-index: -1;
+}
+
+
+article.resume-wrapper.mx-auto.theme-bg-light.p-5.mb-5.my-5.shadow-lg:after {
+    content: 'Upwork';
+    background: #6fda44;
+    color: #fff;
+    position: absolute;
+    top: 42px;
+    left: -24px;
+    padding: 4px 30px;
+    font-family: roboto, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 16px 16px 0px 0px;
+    z-index: -1;
+    transform-origin: center;
+    transform: rotate(270deg);
+}
+
+article.resume-wrapper.mx-auto.theme-bg-light.p-5.mb-5.my-5.shadow-lg:before {
+    content: 'Fiverr';
+    background: #00b22d;
+    color: #fff;
+    position: absolute;
+    top: 642px;
+    left: -17px;
+    width: 100px;
+    padding: 3px 30px;
+    font-family: roboto, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 16px 16px 0px 0px;
+    z-index: -1;
+    transform-origin: center;
+    transform: rotate(270deg);
+
+}
+
+.row.align-items-center:after {
+    content: 'PeoplePerHour';
+    background: #ee7200;
+    color: #fff;
+    position: absolute;
+    top: 1242px;
+    width: 170px;
+    left: -53px;
+    padding: 3px 30px;
+    font-family: roboto, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 16px 16px 0px 0px;
+    z-index: -1;
+    transform-origin: center;
+    transform: rotate(270deg);
+}
+
+/* .row.align-items-center:after {
+    content: 'PeoplePerHour';
+    background: #ee7200;
+    color: #fff;
+    position: absolute;
+    top: 0px;
+    width: 170px;
+    margin-left: 45px;
+    padding: 3px 30px;
+    font-family: roboto,sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 16px 16px 0px 0px;
+    z-index: -1;
+    transform-origin: 0 0;
+    transform: rotate(90deg);
+}*/

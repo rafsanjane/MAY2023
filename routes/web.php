@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SiteController;
 use Illuminate\Http\JsonResponse;
+use App\Http\Middleware\SiteMiddleware;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,49 +21,45 @@ Route::controller(HomeController::class)->group(function () {
 
     Route::get('/', "Page");
     Route::get('/home', "Page");
+    Route::get('/resume', "ResumePage");
+    Route::get('/portfolio', "Portfolio");
+    Route::get('/project', "Project");
 });
 
 
 
-
-
-
-
-
-
-Route::post('/form', [SiteController::class, "FormData"]);
-Route::post('/file', [SiteController::class, "FileData"]);
-Route::post('/ip', [SiteController::class, "UserIp"]);
-Route::post('/json', [SiteController::class, "Json"]);
-Route::get('/redirect', [SiteController::class, "Redirect"]);
-
-Route::post('/hi/{name}/{age}', [SiteController::class, "jsonAction"]);
-
-
-Route::get('/books', [BooksController::class, "books"]);
-Route::get('/books/{is}', [BooksController::class, "getBook"]);
 
 
 Route::controller(SiteController::class)->group(function () {
+    Route::get('/hello/{key}', 'DemoMiddlewareAction')->middleware([SiteMiddleware::class]);
+});
 
-    Route::get('/rafsanjane', 'Home');
-    Route::get('/resume', 'resume');
-    Route::get('/services', 'services');
-    Route::get('/contact', 'contact');
-    Route::get('/portfolio', 'Portfolio');
+// Route::get('/hello', [SiteController::class, 'DemoMiddlewareAction'])->middleware([SiteMiddleware::class]);
+
+Route::controller(SiteController::class)->group(function () {
+
+    // Route::get('/SessionPut/{email}', 'SessionPut');
+    // Route::get('/SessionPull', 'SessionPull');
+    // Route::get('/SessionForget',  'SessionForget');
+    // Route::get('/SessionFlush',  'SessionFlush');
+    // Route::post('/form',  "FormData");
+    // Route::post('/file',  "FileData");
+    // Route::get('/ip',  "UserIp");
+    // Route::post('/json',  "Json");
+    // // Route::get('/redirect',  "Redirect");
+    // Route::get('/cookie',  "CookieAction");
+    // Route::post('/hi/{name}/{age}',  "jsonAction");
 });
 
 
 
+// Route::post('/submit', function (Request $request) {
+//     $email = $request->input('email');
 
-
-Route::post('/submit', function (Request $request) {
-    $email = $request->input('email');
-
-    $data = [
-        'success' => true,
-        'message' => 'Form submitted successfully.'
-    ];
-    return $email;
-    return new JsonResponse($data);
-});
+//     $data = [
+//         'success' => true,
+//         'message' => 'Form submitted successfully.'
+//     ];
+//     return $email;
+//     return new JsonResponse($data);
+// });

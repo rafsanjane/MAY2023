@@ -4,11 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Arr;
-use PhpParser\Node\Expr\Cast\Array_;
+
 
 class SiteController extends Controller
 {
+
+    function CookieAction()
+    {
+        $name = "token";
+        $value = "123XYZ";
+        $minutes = 120;
+        $path = "/";
+        $domain = $_SERVER['SERVER_NAME'];
+        $secure = false;
+        $httpOnly = true;
+
+        return response("Hi")->cookie($name, $value, $minutes, $path, $domain, $secure, $httpOnly);
+    }
 
     function Redirect(Request $request): string
     {
@@ -82,8 +94,8 @@ class SiteController extends Controller
         $city = $request->input("city");
         $postcode = $request->input("postcode");
 
-        // return "My Name is ${name} and My age ${age} 
-        // Living City {$city} Zip {$postcode}  
+        // return "My Name is ${name} and My age ${age}
+        // Living City {$city} Zip {$postcode}
         // Pages x{$page} User-Agent {$userAgent}";
 
         return array(
@@ -115,5 +127,42 @@ class SiteController extends Controller
             "city" => $city,
             "postcode" => $postcode
         );
+    }
+
+
+    function SessionPut(Request $request): bool
+    {
+        $email = $request->email;
+        $request->session()->put('userEmail', $email);
+        return true;
+    }
+
+    function SessionPull(Request $request): string
+    {
+
+        return  $request->session()->pull('userEmail', 'default');
+    }
+
+    function SessionForget(Request $request): bool
+    {
+
+        $request->session()->forget('userEmail');
+
+        return true;
+    }
+
+    function SessionFlush(Request $request): string
+    {
+
+        $request->session()->flush();
+
+        return true;
+    }
+
+    // -------------- MiddleWare practice ----------------------
+
+    function DemoMiddlewareAction(): string
+    {
+        return "MiddleWare Run";
     }
 }
