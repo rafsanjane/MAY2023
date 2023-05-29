@@ -25,7 +25,7 @@ class SiteController extends Controller
     function Redirect(Request $request): string
     {
 
-        return redirect("/home");
+        return redirect("/dashboard");
     }
 
     function Json(Request $request): JsonResponse
@@ -164,5 +164,11 @@ class SiteController extends Controller
     function DemoMiddlewareAction(): string
     {
         return "MiddleWare Run";
+    }
+
+    function DemoManipulat(Request $request): string
+    {
+
+        return "Hi am i secure";
     }
 }

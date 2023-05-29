@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class SiteMiddleware
+class LogRequestsMiddleware
 {
     /**
      * Handle an incoming request.
@@ -15,13 +15,9 @@ class SiteMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
+        Log::info('Request Method: ' . $request->method());
+        Log::info('Request URL: ' . $request->url());
 
-        // $limit = $request->header('X-RateLimit-Remaining');
-        // if ($limit == 0) {
-
-        //     return redirect('/home');
-        // } else {
         return $next($request);
-        // }
     }
 }
