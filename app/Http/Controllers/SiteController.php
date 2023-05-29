@@ -25,7 +25,7 @@ class SiteController extends Controller
     function Redirect(Request $request): string
     {
 
-        return redirect("/dashboard");
+        return redirect("/dashboard",302);
     }
 
     function Json(Request $request): JsonResponse

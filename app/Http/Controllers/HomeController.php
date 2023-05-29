@@ -6,10 +6,16 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    function Page()
+
+    public function __invoke()
     {
-        return view("pages.Home");
+        return view('welcome');
     }
+
+    // function Page()
+    // {
+    //     return view("pages.Home");
+    // }
     function ResumePage()
     {
         return view("pages.Resume");

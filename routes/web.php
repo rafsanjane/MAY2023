@@ -8,6 +8,7 @@ use App\Http\Controllers\SiteController;
 use Illuminate\Http\JsonResponse;
 use App\Http\Middleware\SiteMiddleware;
 use App\Http\Middleware\HomeMiddleware;
+use App\Http\Controllers\AboutController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -72,6 +73,18 @@ Route::controller(SiteController::class)->group(function () {
 //     return $email;
 //     return new JsonResponse($data);
 // });
-Route::get('/home', function () {
-    return redirect('/dashboard');
+Route::get('/home', [SiteController::class, "Redirect"]);
+
+
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', function () {
+        // Profile route logic
+    });
+
+    Route::get('/settings', function () {
+        // Settings route logic
+    });
 });
+
+Route::get('/about', AboutController::class);
